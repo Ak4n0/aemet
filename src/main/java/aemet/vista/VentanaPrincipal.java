@@ -544,6 +544,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Grafica grafica = new Grafica();
         // Según el dato elegido del combo box se configura la gráfica y se cargan los datos.
         if("Velocidad media del viento".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("m/s");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getVientoVelocidadMedia(), medicion.getLocalDateTime());
@@ -551,6 +552,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Velocidad máxima del viento".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("m/s");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getVientoVelocidadMaxima(), medicion.getLocalDateTime());
@@ -558,6 +560,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Dirección del viento".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("grados");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getVientoDireccion(), medicion.getLocalDateTime());
@@ -565,6 +568,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Nivel de precipitación".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("l/m2");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getPrecipitacion(), medicion.getLocalDateTime());
@@ -572,6 +576,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Humedad relativa".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("% humedad");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getHumedadRelativa(), medicion.getLocalDateTime());
@@ -579,6 +584,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Presión barométrica".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("hPa");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getPresionBarometrica(), medicion.getLocalDateTime());
@@ -586,6 +592,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Nivel de insolación".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("horas");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getInsolacion(), medicion.getLocalDateTime());
@@ -593,6 +600,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Temperatura media".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("º C");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getTemperaturaMedia(), medicion.getLocalDateTime());
@@ -600,6 +608,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Temperatura máxima".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("º C");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getTemperaturaMaxima(), medicion.getLocalDateTime());
@@ -607,6 +616,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Temperatura mínima".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("º C");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getTemperaturaMinima(), medicion.getLocalDateTime());
@@ -614,6 +624,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         if("Grosor de capa de nieve".equals((String)cmbDatosGrafica.getSelectedItem())) {
+            grafica.setTitulo((String)cmbDatosGrafica.getSelectedItem());
             grafica.setTituloEjeY("mm");
             for(Medicion medicion: medicionesActuales) {
                 grafica.insertarDato(medicion.getNieveGrosor(), medicion.getLocalDateTime());
