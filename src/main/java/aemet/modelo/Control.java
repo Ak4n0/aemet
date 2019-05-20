@@ -69,10 +69,19 @@ public class Control {
      */
     public static void actualizarMediciones() throws Exception {
         Collection<Estacion> listaEstaciones = EstacionCRUD.obtenerEstacionesConMediciones();
-        Collection<Medicion> listaMediciones;
-        
+        Collection<Medicion> listaMediciones = null;
+        // Intentos de reconexión a la AEMET
+        int intentos = 0;
         for (Estacion estacion : listaEstaciones) {
-            listaMediciones = Integracion.obtenerMedicion(estacion);
+            try {
+                listaMediciones = Integracion.obtenerMedicion(estacion);
+            } catch (Exception ex) {
+                // Si se superan los 3 intentos se lanzará una exceptción que informará de que
+                // no se ha podido conectar a la vase de datos.
+                if(++intentos == 3)
+                    throw new Exception("No se pudieron descargar datos desde la AEMET");
+            }
+            
             for (Medicion medicion : listaMediciones) {
                 MedicionCRUD.guardar(medicion);
             }
