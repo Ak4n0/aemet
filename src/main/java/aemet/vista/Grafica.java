@@ -20,14 +20,15 @@ public class Grafica {
     private String tituloEjeY;
     private ChartPanel panel;
     private JFreeChart grafica;
-    final String FORMATO = "dd/MM/yy HH:mm";
+    private final String FORMATO = "dd/MM/yy HH:mm";
+    
     
     public Grafica() {
         datos = new DefaultCategoryDataset();
         titulo = "Visualización de medidas";
         tituloEjeX = "Fecha/hora";
         tituloEjeY = "Unidades";
-        grafica = ChartFactory.createBarChart(titulo, tituloEjeX, tituloEjeY, null, PlotOrientation.VERTICAL, false, false, false);
+        grafica = ChartFactory.createLineChart(titulo, tituloEjeX, tituloEjeY, null, PlotOrientation.VERTICAL, false, false, false);
     }
 
     public String getTitulo() {
@@ -59,7 +60,7 @@ public class Grafica {
         // Si el dato es null se convertirá en 0 para ser representado por la gráfica
         if(valor == null)
             valor = new Float(0);
-        
+
         datos.addValue(valor, tituloEjeY, fechaHora.format(DateTimeFormatter.ofPattern(FORMATO)));
     }
     
@@ -68,7 +69,7 @@ public class Grafica {
      * @return Devuelve un panel contieniendo la gráfica.
      */
     public JPanel getPanel() {
-        grafica = ChartFactory.createBarChart(titulo, tituloEjeX, tituloEjeY, datos, PlotOrientation.VERTICAL, true, true, false);
+        grafica = ChartFactory.createLineChart(titulo, tituloEjeX, tituloEjeY, datos, PlotOrientation.VERTICAL, true, true, false);
         panel = new ChartPanel(grafica);
         return panel;
     }
