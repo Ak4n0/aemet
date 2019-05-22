@@ -71,6 +71,10 @@ public class Grafica {
     public JPanel getPanel() {
         grafica = ChartFactory.createLineChart(titulo, tituloEjeX, tituloEjeY, datos, PlotOrientation.VERTICAL, true, true, false);
         panel = new ChartPanel(grafica);
+        panel.setMouseWheelEnabled(true);
+        panel.setMouseZoomable(true, false);
+        panel.setRangeZoomable(true);
+        
         return panel;
     }
     
